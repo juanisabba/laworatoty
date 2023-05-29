@@ -17,6 +17,7 @@ const fetchData =  async(values) => {
   try {
     await axios.post(URL, values, {headers})
     .then(res => {
+      setData({...data, loan_amount: values.loan_amount, loan_weeks: values.loan_weeks})
       setShowResponse(200)
       console.log(data)
     })
